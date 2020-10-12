@@ -1,0 +1,77 @@
+html {
+  font-family: 'Roboto', sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+body,
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-size: 15px;
+  margin: 0;
+  line-height: 24px;
+}
+
+h6 {
+  font-family: 'Roboto', sans-serif;
+  margin: 9px;
+  font-size: 17px;
+  line-height: 24px;
+  font-family: 'Roboto', sans-serif;
+}
+
+body {
+  margin-top: -7px;
+  background-color: #fff;
+}
+
+a {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+.m-b-15 {
+  margin-bottom: 15px;
+}
+
+.Toastify__toast--success {
+  background-color: #008b00 !important;
+}
+
+.Toastify__toast--error {
+  background-color: #dc3545 !important;
+}
+
+.react-confirm-alert-overlay {
+  background: rgba(0, 0, 0, 0.74);
+}
+
+.react-confirm-alert-button-group > button {
+  background: #282c34;
+  margin-right: 20px;
+  margin-top: 10px;
+}
+
+.react-confirm-alert-body {
+  text-align: center;
+  font-size: 15px;
+  width: 130px;
+  padding: 60px;
+}
+
+.react-confirm-alert-blur {
+  -webkit-filter: none;
+  filter: none;
+  filter: none;
+  -webkit-filter: none;
+}
+
+
+
+@import url('https://fonts.googleapis.com/icon?family=Material+Icons');
+@import url('https://use.fontawesome.com/releases/v5.3.1/css/all.css');
