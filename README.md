@@ -80,6 +80,11 @@ $ npx knex migrate:latest
 
 ㅤ[Then get a Google API key](https://developers.google.com/maps/documentation/javascript/get-api-key)
 
+#### Finalizing configurations :dash:
+
+Create a folder on your operating system, that folder will be where the .csv files
+will be processed, then change the path with the path from where you created the
+folder in .csv
 
 
 <br>
