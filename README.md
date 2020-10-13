@@ -16,9 +16,7 @@
   
   </h3> 
   <p align="center">
-  <a href="https://github.com/othneildrew/Best-README-Template">
     <img src="https://user-images.githubusercontent.com/67064886/95764473-e611a880-0c86-11eb-8f01-c33e6b0e167c.gif" alt="Logo" >
-  </a>
     <br />
     <br />
     <a href="https://github.com/lucioerlan/calculate-distance-matrix/issues">Report Bug</a>
