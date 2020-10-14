@@ -82,7 +82,7 @@ $ npx knex migrate:latest
 
 Create a folder on your operating system, that folder will be where the .csv files
 will be processed, then change the path with the path from where you created the
-folder in .csv
+folder in .env
 
 
 <br>
