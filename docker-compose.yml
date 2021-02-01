@@ -1,19 +1,19 @@
+  
 version: '2'
 services:
-
   server:
     build:
       context: ./server/
-    command: /usr/app/node_modules/.bin/node server.js
+    command: /usr/app/node_modules/.bin/node src/index.js
     volumes:
       - ./server/:/usr/app
       - /usr/app/node_modules
     ports:
-      - "7400:7400"
+      - "5000:5000"
+    # env_file: ./server/.env # TODO - uncomment this to auto-load your .env file!
     environment:
       - NODE_ENV=development
       - CHOKIDAR_USEPOLLING=true
-
   client:
     build:
       context: ./client/
