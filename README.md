@@ -5,18 +5,16 @@
 [![LinkedIn][linkedin-shield]](https://www.linkedin.com/in/erlanlucio/)
 [![Hits](https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fgithub.com%2Flucioerlan%2Fcalculate-distance-matrix&count_bg=%23E71A18&title_bg=%23555555&icon=dependabot.svg&icon_color=%23E7E7E7&title=views&edge_flat=false)](https://hits.seeyoufarm.com)
 
-
-
 <!-- PROJECT -->
 <br />
 <p align="center">
-  <h3 align="center"> 
+  <h3 align="center">
 
-  Calculate Distance Matrix  :beginner:
-  
+Calculate Distance Matrix 🔰
+
   </h3> 
   <p align="center">
-    <img src="https://user-images.githubusercontent.com/67064886/95764473-e611a880-0c86-11eb-8f01-c33e6b0e167c.gif" alt="Logo" >
+    <img src="https://user-images.githubusercontent.com/67064886/106472231-3ce2fe00-6481-11eb-942b-391a72a55eeb.gif" alt="Logo" >
     <br />
     <br />
     <a href="https://github.com/lucioerlan/calculate-distance-matrix/issues">Report Bug</a>
@@ -25,9 +23,8 @@
   </p>
 </p>
 
-
-
 <!-- ABOUT THE PROJECT -->
+
 ## 🤔 About The Project
 
 This program, calculates a distance matrix using the Janson-Shanon algorithm, bringing the result of the distance or the travel time between two locations. To use, it is very simple, just send a file formatted correctly with the extension .csv on the client as soon as the file is processed, the server returns it on screen.
@@ -47,10 +44,9 @@ $ npm install - client and server
 ```
 
 Considerations:
-* Format the .csv file correctly, example of the .csv file formatted in /server
-* This program was run on Linux :smile:
 
-
+- Format the .csv file correctly, example of the .csv file formatted in /server
+- This program was run on Linux/Windows 😄
 
 <br>
 
@@ -58,18 +54,20 @@ Considerations:
 
 ## 🔥 Setup
 
+#### Create a database called 🐘
 
-#### Create a database called :elephant:
 ```
 distance_matrix
 ```
 
 #### Copy or rename the file
+
 ```
 $ cp .env-examples .env
 ```
 
 #### Create table in the database
+
 ```bash
 $ npx knex migrate:latest
 ```
@@ -78,33 +76,43 @@ $ npx knex migrate:latest
 
 ㅤ[Then get a Google API key](https://developers.google.com/maps/documentation/javascript/get-api-key)
 
-#### Finalizing configurations :dash:
+<br>
 
-Create a folder on your operating system, that folder will be where the .csv files
-will be processed, then change the path with the path from where you created the
-folder in .env
+#### Finalizing configurations 💨
 
+After obtaining a google maps key, place it in [.env] in the GOOGLE_MAPS_API_KEY variable.
+
+Then create a folder on your operating system, that folder will be where the .csv files
+will be processed and then enter the path of the
+folder in [.env]
+
+<br>
+
+<!-- RUNNING TESTS -->
+
+## 🤓 Running tests On the server and API documents
+
+```bash
+$ cd calculate-distance-matrix/server
+```
+
+- Access swagger http://localhost:5000/api/docs 🥇
+- $ npm test
 
 <br>
 
 <!-- RUNNING -->
 
-## 🚀 Running
+## 🚀 Running Default
 
 ```
 $ npm start - client and server
 ```
 
-#### Or Run using with Docker 🐳
+#### Or Run Docker 🐳
 
 ```
 $ docker-compose up
-```
-
-#### Or Run using with Pm2 :city_sunset:
-
-```
-$ pm2 start pm2.config.js - client and server
 ```
 
 <br>
@@ -115,9 +123,9 @@ $ pm2 start pm2.config.js - client and server
 
 This project lives under MIT License. See LICENSE for more details. © - [Erlan Lucio](https://www.linkedin.com/in/erlanlucio/)
 
-
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
+
 [contributors-shield]: https://img.shields.io/github/contributors/othneildrew/Best-README-Template.svg?style=flat-square
 [contributors-url]: https://github.com/othneildrew/Best-README-Template/graphs/contributors
 [forks-shield]: https://img.shields.io/github/forks/othneildrew/Best-README-Template.svg?style=flat-square
