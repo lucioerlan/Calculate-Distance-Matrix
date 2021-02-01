@@ -78,15 +78,6 @@ $ npx knex migrate:latest
 
 <br>
 
-#### Finalizing configurations 💨
-
-After obtaining a google maps key, place it in [.env] in the GOOGLE_MAPS_API_KEY variable.
-
-Then create a folder on your operating system, that folder will be where the .csv files
-will be processed and then enter the path of the
-folder in [.env]
-
-<br>
 
 <!-- RUNNING TESTS -->
 
