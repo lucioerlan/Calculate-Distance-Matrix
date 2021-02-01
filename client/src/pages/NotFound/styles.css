@@ -1,15 +1,10 @@
-.notfound-content {
-  position: relative;
-  height: 100vh;
-}
-
 .notfound-content .notfound {
   position: absolute;
   left: 50%;
   top: 50%;
   -webkit-transform: translate(-50%, -50%);
-      -ms-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
 }
 
 .notfound {
@@ -19,30 +14,24 @@
   text-align: center;
 }
 
-.notfound .notfound-404 {
-  position: relative;
-  height: 240px;
-}
-
 .notfound .notfound-404 h1 {
   font-family: 'Montserrat', sans-serif;
   position: absolute;
   left: 50%;
-  top: 50%;
+  bottom: 0;
   -webkit-transform: translate(-50%, -50%);
-      -ms-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
   font-size: 252px;
   font-weight: 900;
   margin: 0px;
-  color: #41436A;
   text-transform: uppercase;
   letter-spacing: -40px;
   margin-left: -20px;
 }
 
-.notfound .notfound-404 h1>span {
-  text-shadow: -6px 0px 0px #262626;
+.notfound .notfound-404 h1 > span {
+  text-shadow: -6px 0px 0px rgb(29, 26, 26);
 }
 
 .notfound .notfound-404 h3 {
@@ -51,41 +40,41 @@
   font-size: 16px;
   font-weight: 700;
   text-transform: uppercase;
-  color: #262626;
-  margin: 0px;
+  margin: 20px;
   letter-spacing: 3px;
   padding-left: 6px;
 }
 
-.notfound h2 {
-  font-family: 'Cabin', sans-serif;
+.notfound h4 {
+  font-family: 'Roboto', sans-serif;
   font-size: 20px;
-  font-weight: 400;
   text-transform: uppercase;
-  color: #000;
   margin-top: 0px;
   margin-bottom: 25px;
 }
 
 @media only screen and (max-width: 767px) {
   .notfound .notfound-404 {
-    height: 200px;
+    position: relative;
+    height: 240px;
   }
   .notfound .notfound-404 h1 {
     font-size: 200px;
+    margin-top: 0px;
   }
 }
 
 @media only screen and (max-width: 480px) {
   .notfound .notfound-404 {
-    height: 162px;
+    height: 50px;
   }
   .notfound .notfound-404 h1 {
     font-size: 162px;
     height: 150px;
     line-height: 162px;
+    left: 50%;
   }
-  .notfound h2 {
+  .notfound h4 {
     font-size: 16px;
   }
 }

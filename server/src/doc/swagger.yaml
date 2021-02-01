@@ -1,0 +1,27 @@
+swagger: "2.0"
+info:
+  description: '<font size="2" color="red">MIT Licença</font>'
+  version: "1.0.3"
+  title: "Calculate Distance Matrix"
+  license:
+    name: "Calculate-Distance-Matrix"
+    url: "https://github.com/lucioerlan"
+host: "localhost:5000"
+basePath: "/api"
+schemes:
+  - "http"
+paths:
+  /get-files/:
+    get:
+      tags:
+        - ""
+      summary: "Response to the request on PostgreSQL"
+      description: "get eight document"
+      operationId: "get-document"
+      produces:
+        - "application/xml"
+        - "application/json"
+      parameters: []
+      responses:
+        default:
+          description: "successful operation"

@@ -1,13 +1,14 @@
-const express = require('express');
+const router = require('express').Router();
 const multer = require('multer');
-const uploadConfig = require('../config/upload');
-const router = express.Router();
+const uploadConfig = require('../config/config');
+
+const DistanceController = require('../controllers/distance-controller');
+
+const distanceController = new DistanceController();
 const upload = multer(uploadConfig);
 
-const controllerUser = require('../controllers/distance-controller');
-
 router
-.get('/get-files', controllerUser.getFiles)
-.post('/process-files', upload.single('image'),controllerUser.processFiles);
+  .get('/get-files', distanceController.index)
+  .post('/process-files', upload.single('docFile'), distanceController.store);
 
 module.exports = router;
