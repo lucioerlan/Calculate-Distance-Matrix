@@ -1,0 +1,69 @@
+{
+	"info": {
+		"_postman_id": "922562b0-9d3f-467d-96f0-49fca4bea7fa",
+		"name": "Calculate-Distance-Matrix",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "CREATE DOC",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "fullname",
+							"value": "ev",
+							"type": "text"
+						},
+						{
+							"key": "chooseDistances",
+							"value": "distance.text",
+							"type": "text"
+						},
+						{
+							"key": "docFile",
+							"type": "file",
+							"src": "/C:/Users/Erlan/Desktop/example-csv.csv"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:5000/api/process-files",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"process-files"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "RETURN DOCS",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5000/api/get-files",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"get-files"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
