@@ -81,7 +81,7 @@ $ npx knex migrate:latest
 
 <!-- RUNNING TESTS -->
 
-## 🤓 Running tests On the server and API documents
+## 🤓 Running Tests and API Documentation
 
 ```bash
 $ cd calculate-distance-matrix/server
