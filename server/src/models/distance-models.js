@@ -7,7 +7,7 @@ const returnDocs = async () => {
 const createDoc = async (fullname, chooseDistances, docFile) => {
   if (!fullname || !chooseDistances || !docFile) throw new Error('Field not filled!');
 
-  await db('distance').insert({
+  return db('distance').insert({
     fullname,
     chooseDistances,
     docFile,
