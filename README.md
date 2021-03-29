@@ -112,7 +112,7 @@ $ npm start - client and server
 #### Or Run Docker 🐳
 
 ```
-$ docker-compose up
+$ docker-compose up -d
 ```
 
 <br>
