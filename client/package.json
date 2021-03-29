@@ -2,25 +2,25 @@
   "name": "Calculate-Distance-Matrix",
   "author": "Erlan Lucio",
   "issues": "https://github.com/lucioerlan/Calculate-Distance-Matrix/issues",
-  "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
-  },
+  "private": true,
   "dependencies": {
     "@material-ui/core": "^4.11.2",
     "@material-ui/icons": "^4.11.2",
     "@material-ui/lab": "^4.0.0-alpha.56",
     "axios": "^0.21.1",
     "date-fns": "^2.16.1",
-    "eslint-config-react-app": "^6.0.0",
     "prop-types": "latest",
-    "react": "^16.8.6",
+    "react": "^16.12.0",
     "react-dom": "^16.8.6",
     "react-router-dom": "^5.1.2",
-    "react-scripts": "^3.0.1",
+    "react-scripts": "3.4.0",
     "socket.io-client": "^2.3.0"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -32,9 +32,9 @@
       "not op_mini all"
     ],
     "development": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
     ]
   },
   "devDependencies": {
