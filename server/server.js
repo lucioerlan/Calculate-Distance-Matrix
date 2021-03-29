@@ -58,7 +58,7 @@ app.use((err, req, res) => {
 });
 
 
-  server.listen(PORT, () => {
+server.listen(PORT, () => {
     console.log(
       `Server is running at port ${PORT}, see more about the application on: http://${ip.address()}:${PORT}/api/docs`
         .bgMagenta
