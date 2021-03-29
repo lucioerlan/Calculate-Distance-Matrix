@@ -1,7 +1,7 @@
 const _ = require('lodash');
 const path = require('path');
 const request = require('request-promise-native');
-const { helper } = require('../utils/helpers');
+const { helper, GoogleUrl } = require('../utils/helpers');
 const Util = require('../utils/Utils');
 const { returnDocs, createDoc } = require('../models/distance-models');
 
@@ -15,7 +15,12 @@ const util = new Util();
  * @method store create document as a result
  */
 
+
 class DistanceController {
+  constructor() {
+    this.store = this.store.bind(this);
+  }
+
   async index(req, res) {
     try {
       const result = await returnDocs();
@@ -25,21 +30,56 @@ class DistanceController {
       } else {
         util.setError(400, 'no data!');
       }
-      
-      return util.send(res);
 
+      return util.send(res);
     } catch (err) {
       util.setError(500, err);
       return util.send(res);
     }
   }
 
-  
-  static async prepare(row, fullname, docFile, chooseDistances, origin, destination, rows) {
+  async store(req, res) {
+    try {
+      const { fullname, chooseDistances } = req.body;
+      const { filename: docFile } = req.file;
 
+      const raw = await helper.read(
+        path.join(`${process.env.FOLDER_PATH}/${docFile}`)
+      );
+
+      const rows = await helper.parse(raw, { relax: true });
+
+      const headers = rows.shift();
+
+      for (const row of rows) {
+        const origin = headers.indexOf('Origin');
+        const destination = headers.indexOf('Destination');
+
+        this.prepare(
+          row,
+          docFile,
+          chooseDistances,
+          origin,
+          destination,
+          rows
+        );
+      }
+
+      util.setSuccess(200, createDoc(fullname, chooseDistances, docFile));
+      req.io.emit('post');
+
+      return util.send(res);
+    } catch (err) {
+      util.setError(500, err.message);
+      return util.send(res);
+    }
+  }
+
+  async prepare(row, docFile, chooseDistances, origin, destination, rows) {
+    
     const options = {
       method: 'GET',
-      url: `https://maps.googleapis.com/maps/api/distancematrix/json?origins=${row[origin]}&destinations=${row[destination]}&mode=driving&key=${process.env.GOOGLE_MAPS_API_KEY}`,
+      url: GoogleUrl(row, origin, destination),
       json: true,
       resolveWithFullResponse: true,
     };
@@ -56,49 +96,8 @@ class DistanceController {
       const output = await helper.stringify(rows);
       helper.write(`${process.env.FOLDER_PATH}/${docFile}`, output);
     });
+
   }
-
-
-  async store(req, res) {
-    try {
-      const { fullname, chooseDistances } = req.body;
-      const { filename: docFile } = req.file;
-
-      const raw = await helper.read(
-        path.join(`${process.env.FOLDER_PATH}/${docFile}`)
-      );
-
-      const rows = await helper.parse(raw, { relax: true });
-      const headers = rows.shift();
-
-      for (const row of rows) {
-        const origin = headers.indexOf('Origin');
-        const destination = headers.indexOf('Destination');
-
-        DistanceController.prepare(
-          row,
-          fullname,
-          docFile,
-          chooseDistances,
-          origin,
-          destination,
-          rows
-        );
-
-      }
-
-      util.setSuccess(200, 'Doc Saved!', createDoc(fullname, chooseDistances, docFile));
-
-      req.io.emit('post');
-
-      return util.send(res);
-
-    } catch (err) {
-      util.setError(500, err.message);
-      return util.send(res);
-    }
-  }
-
 }
 
 module.exports = DistanceController;
