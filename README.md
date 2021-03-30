@@ -110,7 +110,9 @@ $ npm start - client and server
 ```
 
 #### Or Run Docker 🐳
-
+```
+$ docker network create node-net
+```
 ```
 $ docker-compose up -d
 ```
