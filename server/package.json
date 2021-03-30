@@ -3,10 +3,10 @@
   "version": "1.0.0",
   "author": "Erlan Lucio",
   "issues": "https://github.com/lucioerlan/Calculate-Distance-Matrix/issues",
-  "main": "server.js",
+  "main": "index.js",
   "scripts": {
-    "start": "node server.js",
-    "dev": "nodemon server.js",
+    "start": "node src/index.js",
+    "dev": "nodemon src/index.js",
     "migrate": "npx knex migrate:latest",
     "test": "mocha tests/**/*.test.js --timeout 5000 --exit",
     "lint": "eslint --fix --ext .js,.jsx ."
