@@ -1,27 +1,60 @@
-swagger: "2.0"
+openapi: 3.0.0
 info:
-  description: '<font size="2" color="red">MIT Licença</font>'
-  version: "1.0.3"
-  title: "Calculate Distance Matrix"
-  license:
-    name: "Calculate-Distance-Matrix"
-    url: "https://github.com/lucioerlan"
-host: "localhost:5000"
-basePath: "/api"
-schemes:
-  - "http"
+  description: '<font size="2" color="red">MIT License</font>'
+  title: Calculate-Distance-Matrix
+  contact:
+    name: Erlan Lucio
+    url: https://github.com/lucioerlan
+  version: '1.0'
+servers:
+- url: http://localhost:5000/api
+  variables: {}
 paths:
-  /get-files/:
+  /get-files:
     get:
       tags:
-        - ""
-      summary: "Response to the request on PostgreSQL"
-      description: "get eight document"
-      operationId: "get-document"
-      produces:
-        - "application/xml"
-        - "application/json"
+      - Routes
+      summary: RETURN DOCS
+      operationId: RETURNDOCS
       parameters: []
       responses:
-        default:
-          description: "successful operation"
+        '200':
+          description: ''
+          headers: {}
+      deprecated: false
+  /process-files:
+    post:
+      tags:
+      - Routes
+      summary: CREATE DOC
+      operationId: CREATEDOC
+      parameters: []
+      requestBody:
+        content:
+          multipart/form-data:
+            encoding: {}
+            schema:
+              required:
+              - fullname
+              - chooseDistances
+              - docFile
+              type: object
+              properties:
+                fullname:
+                  type: string
+                  example: routes
+                chooseDistances:
+                  type: string
+                  example: distance.text
+                docFile:
+                  type: string
+                  format: binary
+        required: false
+      responses:
+        '200':
+          description: ''
+          headers: {}
+      deprecated: false
+tags:
+- name: Routes
+  description: ''

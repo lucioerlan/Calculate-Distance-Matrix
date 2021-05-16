@@ -1,6 +1,6 @@
 const router = require('express').Router();
 const multer = require('multer');
-const uploadConfig = require('../config/config');
+const uploadConfig = require('../config/setup-image');
 
 const DistanceController = require('../controllers/distance-controller');
 

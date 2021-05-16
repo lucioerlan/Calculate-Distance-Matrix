@@ -1,13 +1,13 @@
-const db = require('../database/db-config');
+const Distance = require('../schema/distance-schema');
 
-const returnDocs = async () => {
-  return db('distance').orderBy('created_at', 'desc').limit(8);
+const GetAll = async () => {
+  return Distance.find().sort([['createdAt', 'descending']]);
 };
 
-const createDoc = async (fullname, chooseDistances, docFile) => {
-  if (!fullname || !chooseDistances || !docFile) throw new Error('Field not filled!');
+const Store = async (fullname, chooseDistances, docFile) => {
+  if (!docFile) throw new Error('docFile not filled!');
 
-  return db('distance').insert({
+  return Distance.create({
     fullname,
     chooseDistances,
     docFile,
@@ -15,6 +15,6 @@ const createDoc = async (fullname, chooseDistances, docFile) => {
 };
 
 module.exports = {
-  returnDocs,
-  createDoc,
+  GetAll,
+  Store,
 };
