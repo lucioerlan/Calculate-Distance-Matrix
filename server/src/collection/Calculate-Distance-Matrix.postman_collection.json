@@ -15,7 +15,7 @@
 					"formdata": [
 						{
 							"key": "fullname",
-							"value": "ev",
+							"value": "routes",
 							"type": "text"
 						},
 						{
@@ -26,7 +26,7 @@
 						{
 							"key": "docFile",
 							"type": "file",
-							"src": "/C:/Users/Erlan/Desktop/example-csv.csv"
+							"src": "/C:/Users/Erlan/Desktop/respos/Calculate-Distance-Matrix-TRUE/server/example-doc.csv"
 						}
 					]
 				},

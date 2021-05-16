@@ -3,7 +3,7 @@ const path = require('path');
 const request = require('request-promise-native');
 const { helper, GoogleUrl } = require('../utils/helpers');
 const Util = require('../utils/Utils');
-const { returnDocs, createDoc } = require('../models/distance-models');
+const { GetAll, Store } = require('../models/distance-models');
 
 const util = new Util();
 
@@ -23,9 +23,9 @@ class DistanceController {
 
   async index(req, res) {
     try {
-      const result = await returnDocs();
+      const result = await GetAll();
 
-      if (result) {
+      if (result.length) {
         util.setSuccess(200, result);
       } else {
         util.setError(400, 'no data!');
@@ -65,7 +65,7 @@ class DistanceController {
         );
       }
 
-      util.setSuccess(200, createDoc(fullname, chooseDistances, docFile));
+      util.setSuccess(200, Store(fullname, chooseDistances, docFile));
       req.io.emit('post');
 
       return util.send(res);

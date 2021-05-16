@@ -1,3 +1,16 @@
-const options = require('../../knexfile');
+const mongoose = require('mongoose');
+const config = require('../config/setup-database');
+const {logger} = require('../middlewares');
 
-module.exports = require('knex')(options);
+const connectDB = async () => {
+  await mongoose.connect(config.DATABASE_URL, {
+    useCreateIndex: true,
+    useFindAndModify: false,
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+  });
+  if (!mongoose.connection) logger.error('Error connecting Mongo DB');
+  else console.log('Mongo DB connected successfully');
+};
+
+module.exports = connectDB;

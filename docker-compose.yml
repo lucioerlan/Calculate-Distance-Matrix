@@ -5,7 +5,7 @@ volumes:
 
 networks:
   node-net:
-    external: true
+    external: false
 
 services:
     client:
@@ -36,12 +36,9 @@ services:
         expose:
             - 5000
         environment:
-            - FOLDER_PATH=/home/app/files
-            - DB_HOST=db
-            - DB_USER=postgres
-            - DB_PASS=123456
-            - DB_DATABASE=distance_matrix
-            - GOOGLE_MAPS_API_KEY=_____YOU_TOKEN_____
+            - DATABASE_URL=mongodb://db:27017/maps
+            - FOLDER_PATH=files/calculateds
+            - GOOGLE_MAPS_API_KEY=AIzaSyAfW6kN66wZbJdRFIBVVFj8bUH3st0EQjw
         networks:
         - node-net
         restart: on-failure
@@ -56,22 +53,16 @@ services:
         - db
         links:
         - db
-        command: sh -c "cd /home/app && npm install --save && npm run migrate && npm run start"
+        command: sh -c "cd /home/app && npm install --save && npm run start"
 
     db:
-        image: postgres:alpine
-        container_name: postgres
+        image: mongo
+        container_name: mongodb
         networks:
         - node-net
         restart: on-failure
         deploy:
           restart_policy:
             condition: on-failure
-        environment:
-            - POSTGRES_USER=postgres
-            - POSTGRES_PASSWORD=123456
-            - POSTGRES_DB=distance_matrix
         ports:
-            - 5432:5432
-
-
+        - 27017:27017

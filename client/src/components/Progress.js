@@ -4,21 +4,17 @@ import LinearProgress from '@material-ui/core/LinearProgress';
 
 const useStyles = makeStyles({
   root: {
-    width: '100%',
-    marginTop: 20,
-  },
-  barColorPrimary: {
-    backgroundColor: '#006535',
+    width: '100%'
   },
 });
 
-export default function Progress() {
+export default function LinearDeterminate() {
   const classes = useStyles();
   const [progress, setProgress] = useState(0);
 
   useEffect(() => {
     const timer = setInterval(() => {
-      setProgress(oldProgress => {
+      setProgress((oldProgress) => {
         if (oldProgress === 100) {
           return 0;
         }
@@ -36,7 +32,7 @@ export default function Progress() {
     <div className={classes.root}>
       <LinearProgress
         classes={{
-          barColorPrimary: classes.barColorPrimary,
+          barColorPrimary: classes.barColorPrimary
         }}
         variant="determinate"
         value={progress}

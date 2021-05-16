@@ -11,6 +11,7 @@ const path = require('path');
 const app = express();
 const server = require('http').Server(app);
 const io = require('socket.io')(server);
+const connectDB = require('./database/db-config');
 require('dotenv').config();
 require('colors');
 
@@ -58,12 +59,18 @@ app.use((err, req, res) => {
 });
 
 
-server.listen(PORT, () => {
+const startServer = async () => {
+  server.listen(PORT, () => {
     console.log(
       `Server is running at port ${PORT}, see more about the application on: http://${ip.address()}:${PORT}/api/docs`
         .bgMagenta
     );
   });
+};
 
+(async () => {
+  await connectDB();
+  await startServer();
+})();
 
 module.exports = app;

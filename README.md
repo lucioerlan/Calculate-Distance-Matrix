@@ -29,18 +29,22 @@ Calculate Distance Matrix 🔰
 
 This program, calculates a distance matrix using the Janson-Shanon algorithm, bringing the result of the distance or the travel time between two locations. To use, it is very simple, just send a file formatted correctly with the extension .csv on the client as soon as the file is processed, the server returns it on screen.
 
+**-** <a href="https://frontend-distance.herokuapp.com" target="_blank">Frontend</a>
+
+**-** <a href="https://backend-distance.herokuapp.com" target="_blank">Backend</a>
+
 <br>
 
 <!-- INSTALLATION -->
 
-## :hammer: Installation
+## 🔨 Installation Default
 
 You'll need [Node.js](https://nodejs.org) installed on your computer in order to build this app.
 
 ```bash
 git clone https://github.com/lucioerlan/calculate-distance-matrix.git
-$ cd calculate-distance-matrix
-$ npm install - client and server
+$ cd calculate-distance-matrix/client  -and-   calculate-distance-matrix/server
+$ npm install
 ```
 
 Considerations:
@@ -54,23 +58,12 @@ Considerations:
 
 ## 🔥 Setup
 
-#### Create a database called 🐘
-
-```
-distance_matrix
-```
-
 #### Copy or rename the file
 
 ```
-$ cp .env-examples .env
+$ cp .env-examples .env 
 ```
 
-#### Create table in the database
-
-```bash
-$ npx knex migrate:latest
-```
 
 #### Have a google account
 
@@ -80,24 +73,17 @@ $ npx knex migrate:latest
 
 #### Finalizing configurations 💨
 
-After obtaining a google maps key, place it in [.env] in the GOOGLE_MAPS_API_KEY variable.
+* After obtaining a google maps key, place it in [.env] in the GOOGLE_MAPS_API_KEY variable.
 
-Then create a folder on your operating system, that folder will be where the .csv files
-will be processed and then enter the path of the
-folder in [.env]
 
 <br>
 
 <!-- RUNNING TESTS -->
 
-## 🤓 Running tests On the server and API documents
+## 🤓 Documentation and running tests
 
-```bash
-$ cd calculate-distance-matrix/server
-```
-
-- Access swagger http://localhost:5000/api/docs 🥇
-- $ npm test
+* Access swagger http://localhost:5000/api/docs 🥇
+* $ npm test
 
 <br>
 
@@ -106,13 +92,14 @@ $ cd calculate-distance-matrix/server
 ## 🚀 Running Default
 
 ```
-$ npm start - client and server
+$ /client npm start 
+```
+```
+$ /server npm start 
 ```
 
 #### Or Run Docker 🐳
-```
-$ docker network create node-net
-```
+
 ```
 $ docker-compose up -d
 ```

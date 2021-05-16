@@ -1,17 +1,18 @@
-import React, { Fragment } from 'react';
+/* eslint-disable react/no-array-index-key */
+import React from 'react';
 import { Box, Grid } from '@material-ui/core';
 import Skeleton from '@material-ui/lab/Skeleton';
 
-export default function SkeletonDocs() {
+export const SkeletonDocs = () => {
   return (
-    <Fragment>
+    <>
       {Array.from(new Array(5)).map((row, i) => (
-        <Grid key={i} container justify="center" spacing={3}>
+        <Grid key={i} style={{ marginBottom: -30 }} spacing={3}>
           <Box>
-            <Skeleton animation="wave" width="100vh" height={60} />
+            <Skeleton animation="wave" height={130} />
           </Box>
         </Grid>
       ))}
-    </Fragment>
+    </>
   );
-}
+};
