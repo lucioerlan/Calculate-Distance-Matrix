@@ -47,7 +47,7 @@ const useStyles = makeStyles((theme) => ({
 
 const Home = () => {
   const classes = useStyles();
-  const [item, setItem] = useState({
+  const [alert, setAlert] = useState({
     message: null,
     variant: null,
     loading: false
@@ -61,22 +61,22 @@ const Home = () => {
   const handleSubmit = async (e) => {
     try {
       e.preventDefault();
-      setTimeout(() => setItem({ message: null, variant: null }), 4000);
+      setTimeout(() => setAlert({ message: null, variant: null }), 4000);
 
       const data = new FormData();
       data.append('docFile', state.docFile);
       data.append('fullname', state.fullname);
       data.append('chooseDistances', state.chooseDistances);
 
-      await api.post('process-files', data, setItem({ loading: true }));
+      await api.post('process-files', data, setAlert({ loading: true }));
 
-      setItem({
+      setAlert({
         message: 'Data successfully saved!',
         variant: 'success',
         loading: false
       });
     } catch (error) {
-      setItem({
+      setAlert({
         message: 'Error saving!',
         variant: 'error',
         loading: false
@@ -110,11 +110,11 @@ const Home = () => {
           btnAttach={classes.btnAttach}
           btnSubmit={classes.btnSubmit}
         />
-        {item.loading ? <Progress /> : null}
-        <MySnackbar />
+        {alert.loading ? <Progress /> : null}
       </Box>
       <FileExample />
       <FileList />
+      <MySnackbar />
     </>
   );
 };
