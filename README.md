@@ -14,7 +14,7 @@ Calculate Distance Matrix 🔰
 
   </h3> 
   <p align="center">
-    <img src="https://user-images.githubusercontent.com/67064886/106472231-3ce2fe00-6481-11eb-942b-391a72a55eeb.gif" alt="Logo" >
+    <img src="https://user-images.githubusercontent.com/67064886/118468138-d950a980-b6da-11eb-9649-8d51eba152f2.gif" alt="Logo" >
     <br />
     <br />
     <a href="https://github.com/lucioerlan/calculate-distance-matrix/issues">Report Bug</a>
