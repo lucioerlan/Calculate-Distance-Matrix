@@ -38,7 +38,7 @@ services:
         environment:
             - DATABASE_URL=mongodb://db:27017/maps
             - FOLDER_PATH=files/calculateds
-            - GOOGLE_MAPS_API_KEY=AIzaSyAfW6kN66wZbJdRFIBVVFj8bUH3st0EQjw
+            - GOOGLE_MAPS_API_KEY=___YOUTOKEN_____
         networks:
         - node-net
         restart: on-failure
