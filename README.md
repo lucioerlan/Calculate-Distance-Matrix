@@ -29,9 +29,9 @@ Calculate Distance Matrix 🔰
 
 This program, calculates a distance matrix using the Janson-Shanon algorithm, bringing the result of the distance or the travel time between two locations. To use, it is very simple, just send a file formatted correctly with the extension .csv on the client as soon as the file is processed, the server returns it on screen.
 
-**-** <a href="https://frontend-distance.herokuapp.com" target="_blank">Frontend</a>
+**-** <a href=" https://frontend-calculate-distance.herokuapp.com" target="_blank">Frontend</a>
 
-**-** <a href="https://backend-distance.herokuapp.com" target="_blank">Backend</a>
+**-** <a href="https://backend-calculate-distance.herokuapp.com/api/docs" target="_blank">Backend</a>
 
 <br>
 
